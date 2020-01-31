@@ -1,0 +1,66 @@
+import { CartModule } from './cart/cart.module';
+import {NgModule} from '@angular/core';
+import { AppComponent } from './app.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { HomeComponent } from './components/home/home.component';
+import { CounterComponent } from './components/counter/counter.component';
+
+import {FormsModule} from '@angular/forms';
+import { SharedModule } from './shared/shared.module';
+import { ContactComponent } from './components/contact/contact.component';
+import { AboutComponent } from './components/about/about.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+
+import {Route, RouterModule} from '@angular/router';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+
+const routeConfig: Route[] = [
+    {
+        path: '', // localhost:4200
+        component: HomeComponent
+    },
+    {
+        path: 'about', //localhost:4200/about
+        component: AboutComponent
+    },
+    {
+        path: 'contact',
+        component: ContactComponent
+    },
+    {
+        path: '**',
+        component: NotFoundComponent
+    }
+]
+
+@NgModule({
+    imports : [
+        // other module dependencies
+        BrowserModule,
+        FormsModule,
+        SharedModule,
+        RouterModule.forRoot(routeConfig),
+        CartModule
+    ],
+    declarations: [
+        // components, directives, pipe
+        AppComponent,
+        HomeComponent,
+        CounterComponent,
+        ContactComponent,
+        AboutComponent,
+        NotFoundComponent,
+        HeaderComponent,
+        FooterComponent,
+        // Header, Footer
+    ],
+
+    bootstrap: [
+        // The first component/app component
+        AppComponent
+    ]
+})
+export class AppModule {
+
+}
