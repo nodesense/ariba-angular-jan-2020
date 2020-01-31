@@ -1,3 +1,4 @@
+import { CartItem } from './../../models/cart-item';
 import { CartService } from './../../services/cart.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -13,6 +14,17 @@ export class CartComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  addItem() {
+    const id = Math.ceil(Math.random() * 10000);
+    const cartItem = new CartItem();
+    cartItem.id = id;
+    cartItem.name = `Product ${id}`;
+    cartItem.qty = 1;
+    cartItem.price = Math.ceil(Math.random() * 100);
+    
+    this.cartService.addItem(cartItem);
   }
 
 }
