@@ -1,5 +1,8 @@
 # Notes
 
+https://github.com/nodesense
+
+
 git clone https://github.com/nodesense/ariba-angular-jan-2020
 
 cd ariba-angular-jan-2020
@@ -44,3 +47,17 @@ AOT - Ahead of Time
     -- Good for performance
     -- Happens on Development mahcine, where we have TypeScript, node.js installed
     -- HTML View --> TS (type checking/spelling) --> JS
+
+
+    Parent -> child [property binding]
+    child --> parent (event)
+
+
+Services
+    Application State 
+    data sharing amoung siblings 
+    data sharing between routes
+    Business Logic
+    API/Web service communication
+
+    Dependency Injection
