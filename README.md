@@ -1,5 +1,16 @@
 # Notes
 
+git clone https://github.com/nodesense/ariba-angular-jan-2020
+
+cd ariba-angular-jan-2020
+
+npm install
+
+ng serve
+
+
+
+
 Module - AppModule
     -- declarations
             components
