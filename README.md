@@ -61,3 +61,20 @@ Services
     API/Web service communication
 
     Dependency Injection
+
+
+
+https://github.com/nodesense/restful-server
+
+
+ng g module product
+ng g c product/components/product-home
+ng g c product/components/product-list
+ng g c product/components/product-edit
+ng g c product/components/product-search
+ng g service product/services/product
+ng g class   product/models/product
+ng g class   product/models/brand
+
+
+

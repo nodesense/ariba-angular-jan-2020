@@ -12,7 +12,6 @@ export class CartSummaryComponent implements OnInit {
   amount: number;
   totalItems: number;
 
-
   totalItems$: Observable<number>;
 
   constructor(private cartService: CartService) {
