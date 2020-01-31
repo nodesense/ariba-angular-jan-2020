@@ -1,1 +1,17 @@
-<p>product-list works!</p>
+<h2>Product List</h2>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>+Cart</th>
+    </tr>
+
+    <tr *ngFor="let product of products">
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+        <td>
+            <button (click)="addToCart(product)">+Cart</button>
+        </td>
+    </tr>
+</table>

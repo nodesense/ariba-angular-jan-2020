@@ -1,3 +1,4 @@
+import { ProductModule } from './product/product.module';
 import { CartModule } from './cart/cart.module';
 import {NgModule} from '@angular/core';
 import { AppComponent } from './app.component';
@@ -14,6 +15,10 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import {Route, RouterModule} from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+
+
+import {HttpClientModule} from '@angular/common/http';
+import { AuthModule } from './auth/auth.module';
 
 const routeConfig: Route[] = [
     {
@@ -41,7 +46,10 @@ const routeConfig: Route[] = [
         FormsModule,
         SharedModule,
         RouterModule.forRoot(routeConfig),
-        CartModule
+        CartModule,
+        ProductModule,
+        HttpClientModule,
+        AuthModule
     ],
     declarations: [
         // components, directives, pipe

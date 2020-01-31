@@ -13,7 +13,7 @@ const routeConfig: Route[] = [
     children: [
       {
         path: '', // default
-        component: ProductListComponent
+        component: ProductListComponent 
       },
       {
         path: 'create',
@@ -30,7 +30,6 @@ const routeConfig: Route[] = [
     ]
   }
 ]
-
 
 @NgModule({
   declarations: [ProductHomeComponent, ProductListComponent, ProductEditComponent, ProductSearchComponent],
