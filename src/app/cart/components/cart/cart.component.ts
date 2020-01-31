@@ -23,8 +23,12 @@ export class CartComponent implements OnInit {
     cartItem.name = `Product ${id}`;
     cartItem.qty = 1;
     cartItem.price = Math.ceil(Math.random() * 100);
-    
+
     this.cartService.addItem(cartItem);
+  }
+
+  empty() {
+    this.cartService.empty();
   }
 
 }
