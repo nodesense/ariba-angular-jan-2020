@@ -8,7 +8,8 @@ import {Route, RouterModule} from '@angular/router';
 
 const routeConfig: Route[] = [
   {
-    path: 'cart',
+    path: '', // lazy loading
+    // path: 'cart',
     component: CartComponent
   }
 ];

@@ -1,6 +1,10 @@
+import { ErrorHandlerService } from './ErrorHandlerService';
 import { ProductModule } from './product/product.module';
-import { CartModule } from './cart/cart.module';
-import {NgModule} from '@angular/core';
+
+
+// import { CartModule } from './cart/cart.module';
+
+import {NgModule, ErrorHandler} from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { HomeComponent } from './components/home/home.component';
@@ -34,6 +38,10 @@ const routeConfig: Route[] = [
         component: ContactComponent
     },
     {
+        path: 'cart',
+        loadChildren: './cart/cart.module#CartModule'
+    },
+    {
         path: '**',
         component: NotFoundComponent
     }
@@ -46,7 +54,7 @@ const routeConfig: Route[] = [
         FormsModule,
         SharedModule,
         RouterModule.forRoot(routeConfig),
-        CartModule,
+      //   CartModule,
         ProductModule,
         HttpClientModule,
         AuthModule
@@ -67,6 +75,13 @@ const routeConfig: Route[] = [
     bootstrap: [
         // The first component/app component
         AppComponent
+    ],
+    providers: [
+        
+            {
+                provide: ErrorHandler,
+                useClass: ErrorHandlerService
+            } 
     ]
 })
 export class AppModule {

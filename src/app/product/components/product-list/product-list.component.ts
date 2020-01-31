@@ -1,3 +1,5 @@
+import { CartItem } from './../../../cart/models/cart-item';
+import { CartService } from './../../../cart/services/cart.service';
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product';
@@ -13,7 +15,8 @@ export class ProductListComponent implements OnInit {
 
   subscription: Subscription;
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, 
+              private cartService: CartService) { }
 
   ngOnInit() {
     console.log('product list init')
@@ -30,6 +33,16 @@ export class ProductListComponent implements OnInit {
     console.log('product list destoryed')
     
     this.subscription.unsubscribe();
+  }
+
+  addToCart(product: Product) {
+    const cartItem = new CartItem();
+    cartItem.id = product.id;
+    cartItem.name = product.name;
+    cartItem.price = product.price;
+    cartItem.qty = 1;
+
+    this.cartService.addItem(cartItem);
   }
 
 }

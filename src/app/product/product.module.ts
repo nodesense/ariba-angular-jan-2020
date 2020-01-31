@@ -1,3 +1,4 @@
+import { AuthGuard } from './../auth/guards/auth.guard';
 import { FormsModule } from '@angular/forms';
 import { Route, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -18,11 +19,14 @@ const routeConfig: Route[] = [
       },
       {
         path: 'create',
-        component: ProductEditComponent
+        component: ProductEditComponent,
+        canActivate: [AuthGuard]
       },
       {
         path: 'edit/:id', // localhost:4200/products/edit/3232
         component: ProductEditComponent
+        ,
+        canActivate: [AuthGuard]
       },
       {
         path: 'search',
