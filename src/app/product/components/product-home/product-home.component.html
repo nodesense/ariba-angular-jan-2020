@@ -1,13 +1,16 @@
 <h2>Product Home</h2>
 
 <a routerLink="/products" 
-    class="button"> List </a>
+    class="button"
+    routerLinkActive="success"
+    [routerLinkActiveOptions]="{exact:true}"
+    > List </a>
 
 <a routerLink="/products/create" 
-    class="button"> Create </a>
+    class="button" routerLinkActive="success"> Create </a>
 
 <a routerLink="/products/search" 
-class="button"> Search </a>
+class="button" routerLinkActive="success" > Search </a>
 
 
 <router-outlet>

@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { Route, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -35,7 +36,8 @@ const routeConfig: Route[] = [
   declarations: [ProductHomeComponent, ProductListComponent, ProductEditComponent, ProductSearchComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(routeConfig)
+    RouterModule.forChild(routeConfig),
+    FormsModule
   ]
 })
 export class ProductModule { }
